@@ -1,0 +1,6 @@
+// jsconfig.json（放在项目根目录）
+{
+  "vueCompilerOptions": {
+    "globalTypesPath": ""
+  }
+}

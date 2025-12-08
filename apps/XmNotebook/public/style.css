@@ -1,0 +1,5 @@
+body { font-family: system-ui, sans-serif; padding: 18px; }
+pre.code { background:#0f0f0f; color:#e6e6e6; padding:12px; border-radius:6px; overflow:auto; }
+.cell { margin: 12px 0; border: 1px solid #eee; padding:8px; border-radius:6px; }
+.controls { margin-top:6px; }
+.output { background:#f7f7f7; padding:8px; border-radius:6px; min-height:24px; white-space: pre-wrap; }

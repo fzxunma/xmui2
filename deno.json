@@ -1,0 +1,23 @@
+{
+    "workspace": [
+        "apps/*",
+        "packages/*"
+    ],
+    "tasks": {
+        "notebook": "deno run -A --unstable apps/XmNotebook/main.ts",
+        "gateway": "deno run -A --unstable-kv --watch apps/api/gateway/main.js",
+        "api:user": "deno run -A --watch apps/api/user/main.js",
+        "api:web": "deno run -A --watch apps/api/web/main.js",
+        "api:admin": "deno run -A --watch apps/api/admin/main.js",
+        "webui": "deno run -A apps/webui/main.js",
+        "compile": "deno compile -A --include 'apps/web' --include 'packages/vendor' -o dist/xmui-app apps/api/gateway/main.js",
+        "dev": "deno task gateway & deno task api:user & deno task api:web & deno task api:admin & wait"
+    },
+    "imports": {
+        "hono": "npm:hono@^4.10.6",
+        "@XmProKVFS": "./packages/fs/mod.js",
+        "@XmCompiler": "./packages/compiler/mod.js",
+        "@vue/compiler-sfc": "npm:@vue/compiler-sfc",
+        "@XmRuntimeServer": "./packages/runtime/mod.js"
+    }
+}
